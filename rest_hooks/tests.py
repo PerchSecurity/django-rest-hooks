@@ -24,7 +24,7 @@ except ImportError:
 
 from rest_hooks import models
 from rest_hooks import signals
-from rest_hooks.admin import HookForm
+# from rest_hooks.admin import HookForm
 
 Hook = models.Hook
 
@@ -285,31 +285,31 @@ class RESTHooksTest(TestCase):
         payload['data']['fields']['submit_date'] = ANY
         mock_handler.assert_called_with(signal=ANY, sender=Hook, payload=payload, instance=comment, hook=hook)
 
-    def test_valid_form(self):
+    # def test_valid_form(self):
 
-        form_data = {
-            'user': self.user.id,
-            'target': "http://example.com",
-            'event': HookForm.get_admin_events()[0][0]
-        }
-        form = HookForm(data=form_data)
-        self.assertTrue(form.is_valid())
+    #     form_data = {
+    #         'user': self.user.id,
+    #         'target': "http://example.com",
+    #         'event': HookForm.get_admin_events()[0][0]
+    #     }
+    #     form = HookForm(data=form_data)
+    #     self.assertTrue(form.is_valid())
 
-    def test_form_save(self):
-        form_data = {
-            'user': self.user.id,
-            'target': "http://example.com",
-            'event': HookForm.get_admin_events()[0][0]
-        }
-        form = HookForm(data=form_data)
+    # def test_form_save(self):
+    #     form_data = {
+    #         'user': self.user.id,
+    #         'target': "http://example.com",
+    #         'event': HookForm.get_admin_events()[0][0]
+    #     }
+    #     form = HookForm(data=form_data)
 
-        self.assertTrue(form.is_valid())
-        instance = form.save()
-        self.assertIsInstance(instance, Hook)
+    #     self.assertTrue(form.is_valid())
+    #     instance = form.save()
+    #     self.assertIsInstance(instance, Hook)
 
-    def test_invalid_form(self):
-        form = HookForm(data={})
-        self.assertFalse(form.is_valid())
+    # def test_invalid_form(self):
+    #     form = HookForm(data={})
+    #     self.assertFalse(form.is_valid())
 
     @override_settings(HOOK_CUSTOM_MODEL='rest_hooks.models.Hook')
     def test_get_custom_hook_model(self):

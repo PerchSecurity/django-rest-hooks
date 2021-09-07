@@ -35,5 +35,5 @@ class HookAdmin(admin.ModelAdmin):
     raw_id_fields = ['user', ]
     form = HookForm
 
-
-admin.site.register(HookModel, HookAdmin)
+# Removing the default admin from appearing 
+# admin.site.register(HookModel, HookAdmin)

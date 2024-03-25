@@ -157,9 +157,8 @@ class AbstractHook(models.Model):
 
 
 class Hook(AbstractHook):
-    if django.VERSION >= (1, 7):
-        class Meta(AbstractHook.Meta):
-            swappable = 'HOOK_CUSTOM_MODEL'
+    class Meta(AbstractHook.Meta):
+        swappable = 'HOOK_CUSTOM_MODEL'
 
 
 

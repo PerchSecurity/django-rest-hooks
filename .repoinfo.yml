@@ -1,0 +1,13 @@
+Repository Name: PerchSecurity/django-rest-hooks
+Description: Django REST hooks used to access hooks directly - Python
+Product: CW Siem
+Business Pillar: Cybersecurity
+Business Criticality: High
+Product Owner: Sravya Mutnuru
+Engineering Lead: Robert Farmer
+Team Owner ID: 185
+Purpose: Product
+Type: Library
+User Access: Product
+CI Type: Not Applicable
+Exceptions:
